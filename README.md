@@ -2,10 +2,12 @@ flask-template
 ==============
 Flask+Bootstrap boilerplate
 
-Requirements (install it with pip):
-flask-sqlalchemy
-flask-assets
-flask-wtf
+# Requirements:
+You can install it with pip
+* flask-sqlalchemy
+* flask-assets
+* flask-wtf
 
-Optional:
-alembic
+# Optional:
+Not required, but preferably
+* alembic
