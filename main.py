@@ -1,9 +1,12 @@
 from flask import Flask, url_for, render_template, redirect
+from flask.ext.assets import Environment, Bundle
 
 app = Flask(__name__)
 app.config.from_object('config')
+assets_env = Environment(app)
 
 @app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html')
 
