@@ -1,5 +1,6 @@
 from flask import Flask, url_for, render_template, redirect
 from flask.ext.assets import Environment, Bundle
+from db import *
 
 app = Flask(__name__)
 app.config.from_object('config')
