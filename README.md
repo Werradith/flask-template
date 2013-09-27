@@ -1,6 +1,6 @@
 flask-template
 ==============
-Flask+Bootstrap boilerplate
+Flask boilerplate, uses bootstrap, sqlalchemy, webassets and wtforms.
 
 # Requirements:
 You can install it with [pip](https://pypi.python.org/pypi/pip)
