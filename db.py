@@ -10,7 +10,7 @@ db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))
 Base = declarative_base()
-db_query = Base.query = db_session.query_property()
+Base.query = db_session.query_property()
 
 #class Sample(Base):
 #    __tablename__ = 'sample'
