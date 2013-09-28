@@ -1,9 +1,9 @@
 {# {% include 'ext-scripts.html' %} #}
 {% assets filters="jsmin", output="gen/packed.js",
-          "jquery-2.0.3.min.js", "jsfunctions.js", "bootstrap/js/bootstrap.min.js" %}
+          "jquery-2.0.3.min.js", "jquery-address.js", "semantic-ui/javascript/semantic.min.js", "jsfunctions.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
 {% assets filters="cssmin", output="gen/packed.css",
-          "style.css", "bootstrap/css/bootstrap.min.css", "bootstrap/css/bootstrap-theme.min.css" %}
+          "semantic-ui/css/semantic.min.css", "style.css" %}
     <link rel="stylesheet" href="{{ ASSET_URL }}">
 {% endassets %}

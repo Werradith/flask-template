@@ -10,35 +10,32 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"/>
     {% include 'deps.html' %}
 </head>
-
 <body>
+{% include 'menu.html' %}
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">{{ config.SITE_NAME }}</a>
+{# <div class="ui vertical menu">
+    <a class="active item">
+        <div class="ui teal label">1</div>
+        Vertical
+    </a>
+    <a class="item">
+        <div class="ui label">51</div>
+        Menu
+    </a>
+    <a class="item">
+        <div class="ui label">1</div>
+        Example
+    </a>
+    <div class="item">
+        <div class="ui icon input">
+            <input placeholder="Search mail..." type="text">
+            <i class="search icon"></i>
         </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
     </div>
-</div>
+</div> #}
 
 <div class="container">
-
-    <div class="starter-template">
-        {% block content %}{% endblock %}
-    </div>
-
+    {% block content %}{% endblock %}
 </div>
 </body>
 </html>
