@@ -1,3 +1,4 @@
+# coding=utf-8
 from flask import Flask, url_for, render_template, redirect
 from flask.ext.assets import Environment, Bundle
 
