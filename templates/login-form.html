@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block title %}{{ config.SITE_NAME }} - Login{% endblock %}
+{% block content %}
+    {% if config.DEBUG_ENABLED and form.errors %}
+    <div class="alert alert-danger">
+    <h4>Errors:</h4>
+        <p>
+            {% for error in form.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </p>
+    </div>
+    {% endif %}
+    <form method="post" role="form" action="{{ url_for('login') }}" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-group{% if form.login.errors %} has-error{% endif %}">
+            <label class="control-label" for="login">Login</label>
+            {{ form.login(class='form-control', placeholder='Login') }}
+        </div>
+        <div class="form-group{% if form.password.errors %} has-error{% endif %}">
+            <label class="control-label" for="password">Password</label>
+            {{ form.password(class='form-control', placeholder='Password') }}
+        </div>
+        <div class="checkbox">
+            <label>
+                {{ form.remember_me }} Remember Me
+            </label>
+        </div>
+        {{ form.commit(class='btn btn-default', value='Login') }}
+    </form>
+{% endblock %}
