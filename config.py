@@ -12,6 +12,5 @@ RECAPTCHA_PRIVATE_KEY = 'recaptcha private key'
 COOKIES_MAX_AGE = 2592000
 CSRF_ENABLED = True
 SECRET_KEY = 'changeme'
-DEBUG_ENABLED = True
 SITE_NAME = u'Site Name'
 SERVER_NAME = 'localhost:5000'
