@@ -3,7 +3,7 @@
           "jquery-2.0.3.min.js", "jsfunctions.js", "bootstrap/js/bootstrap.min.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
-{% assets filters="cssmin", output="gen/packed.css",
+{% assets filters="yui_css", output="gen/packed.css",
           "bootstrap/css/bootstrap.min.css", "bootstrap/css/bootstrap-theme.min.css", "style.css" %}
     <link rel="stylesheet" href="{{ ASSET_URL }}">
 {% endassets %}
