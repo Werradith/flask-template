@@ -8,7 +8,7 @@ You can install it with [pip](https://pypi.python.org/pypi/pip)
 * flask-assets
 * flask-wtf
 * cssmin
-* jsmin
+* yuicompressor
 
 # Optional:
 Not required, but preferably

@@ -1,5 +1,5 @@
 {# {% include 'ext-scripts.html' %} #}
-{% assets filters="jsmin", output="gen/packed.js",
+{% assets filters="yui_js", output="gen/packed.js",
           "jquery-2.0.3.min.js", "jsfunctions.js", "bootstrap/js/bootstrap.min.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
