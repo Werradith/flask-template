@@ -6,8 +6,8 @@ MAX_CONTENT_LENGTH = 5 * 1024 * 1024 # 5 Megabytes
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 #SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@localhost/dbname?charset=utf8'
 
-RECAPTCHA_PUBLIC_KEY = 'recaptcha public key'
-RECAPTCHA_PRIVATE_KEY = 'recaptcha private key'
+RECAPTCHA_PUBLIC_KEY = '6Ld10uoSAAAAAOVKGEe8dpvNnnTP901Qdnb5NSCp'
+RECAPTCHA_PRIVATE_KEY = '6Ld10uoSAAAAACZq0gO8Bcy25PLQjzx3uAmMsoVa'
 
 COOKIES_MAX_AGE = 2592000
 CSRF_ENABLED = True

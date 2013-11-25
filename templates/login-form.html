@@ -32,6 +32,10 @@
             <label class="control-label" for="password">Password</label>
             {{ form.password(class='form-control', placeholder='Password') }}
         </div>
+        <div class="form-group{% if form.captcha.errors %} has-error{% endif %}">
+            <label class="control-label" for="captcha">Captcha</label>
+            {{ form.captcha() }}
+        </div>
         <div class="checkbox">
             <label>
                 {{ form.remember_me }} Remember Me

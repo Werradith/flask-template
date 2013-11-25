@@ -10,3 +10,4 @@ class LoginForm(Form):
     remember_me = BooleanField('remember-me')
     #captcha = RecaptchaField()
     commit = SubmitField('commit')
+    captcha = RecaptchaField()
