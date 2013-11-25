@@ -14,8 +14,11 @@ class User(db.Model):
         'mysql_charset': 'utf8'
     }
     id = db.Column(db.Integer, primary_key = True)
-    username = db.Column(db.String(100))
+    username = db.Column(db.String(30))
     password = db.Column(db.String(32))
+    email = db.Column(db.String(70))
+    register_date = db.Column(db.DateTime())
+    register_ip = db.Column(db.String(15))
     last_login = db.Column(db.DateTime())
     last_ip = db.Column(db.String(15))
 

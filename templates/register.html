@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block title %}{{ config.SITE_NAME }} - Login{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-danger">
+                {% for message in messages %}
+                    <li class="error-message">{{ message }}</li>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" role="form" action="{{ url_for('register') }}" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-group{% if form.login.errors %} has-error{% endif %}">
+            <label class="control-label" for="login">Login</label>
+            {{ form.login(class='form-control', placeholder='JohnDoe') }}
+            {% if form.login.errors %}
+                <ul class="errors">{% for error in form.login.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            {% endif %}
+        </div>
+        <div class="form-group{% if form.password.errors %} has-error{% endif %}">
+            <label class="control-label" for="password">Password</label>
+            {{ form.password(class='form-control', placeholder='StRo^nG19^Pa$sw0rd67') }}
+            {% if form.password.errors %}
+                <ul class="errors">{% for error in form.password.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            {% endif %}
+        </div>
+        <div class="form-group{% if form.email.errors %} has-error{% endif %}">
+            <label class="control-label" for="email">E-mail</label>
+            {{ form.email(class='form-control', placeholder='johndoe@mail.com') }}
+            {% if form.email.errors %}
+                <ul class="errors">{% for error in form.email.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            {% endif %}
+        </div>
+        <div class="form-group{% if form.captcha.errors %} has-error{% endif %}">
+            <label class="control-label" for="captcha">Captcha</label>
+            {{ form.captcha() }}
+        </div>
+        {{ form.commit(class='btn btn-default', value='Register') }}
+    </form>
+{% endblock %}

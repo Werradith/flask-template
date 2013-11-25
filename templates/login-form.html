@@ -1,17 +1,6 @@
 {% extends 'layout.html' %}
 {% block title %}{{ config.SITE_NAME }} - Login{% endblock %}
 {% block content %}
-    {% if config.DEBUG_ENABLED and form.errors %}
-    <div class="alert alert-danger">
-    <h4>Errors:</h4>
-        <p>
-            {% for error in form.errors %}
-                <li>{{ error }}</li>
-            {% endfor %}
-        </p>
-    </div>
-    {% endif %}
-
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <div class="alert alert-danger">
@@ -26,7 +15,7 @@
         {{ form.hidden_tag() }}
         <div class="form-group{% if form.login.errors %} has-error{% endif %}">
             <label class="control-label" for="login">Login</label>
-            {{ form.login(class='form-control', placeholder='Login') }}
+            {{ form.login(class='form-control', placeholder='Login or E-mail') }}
         </div>
         <div class="form-group{% if form.password.errors %} has-error{% endif %}">
             <label class="control-label" for="password">Password</label>

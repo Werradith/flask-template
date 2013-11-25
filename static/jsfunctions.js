@@ -1,3 +1,3 @@
 $(function() {
-    // On document load
+    $('.dropdown-toggle').dropdown();
 });

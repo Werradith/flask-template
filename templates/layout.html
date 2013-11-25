@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿{% from '_macros.html' import glyph_icon %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -28,13 +29,19 @@
                 {% if request.endpoint == 'index' %}<li class="active">{% else %}<li>{% endif %}<a href="{{ url_for('index') }}">Home</a></li>
                 {% if not session.logged_as %}
                 {% if request.endpoint == 'login' %}<li class="active">{% else %}<li>{% endif %}<a href="{{ url_for('login') }}">Login</a></li>
+                {% if request.endpoint == 'register' %}<li class="active">{% else %}<li>{% endif %}<a href="{{ url_for('register') }}">Register</a></li>
                 {% endif %}
                 {# <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li> #}
             </ul>
             {% if session.logged_as %}
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Logged in as {{ session.logged_as }}</a></li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" href="#">{{ glyph_icon('user') }} Logged in as {{ session.logged_as }}</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ url_for('logout') }}">{{ glyph_icon('off') }} Logout</a></li>
+                    </ul>
+                </li>
             </ul>
             {% endif %}
         </div><!--/.nav-collapse -->
