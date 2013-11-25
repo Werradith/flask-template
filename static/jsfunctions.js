@@ -1,1 +1,3 @@
-// There is nothing right now
+$(function() {
+    // On document load
+});

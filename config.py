@@ -13,4 +13,9 @@ COOKIES_MAX_AGE = 2592000
 CSRF_ENABLED = True
 SECRET_KEY = 'changeme'
 SITE_NAME = u'Site Name'
-SERVER_NAME = 'localhost:5000'
+#SERVER_NAME = 'localhost'
+
+DEBUG_PORT = 5000
+DEBUG_HOST = 'localhost'
+HOST = '0.0.0.0'
+PORT = 80

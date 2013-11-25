@@ -3,14 +3,21 @@ from main import app
 
 db = SQLAlchemy(app)
 
-#class Sample(db.Model):
-#    __tablename__ = 'sample'
-#    __table_args__ = {
-#        'mysql_engine': 'InnoDB',
-#        'mysql_charset': 'utf8'
-#    }
-#    id = db.Column(db.Integer, primary_key = True)
-#    text = db.Column(db.String(100))
+def get_password_hash(pwd):
+    import hashlib
+    return hashlib.md5((pwd + app.config['SECRET_KEY']).encode('utf-8')).hexdigest()
+
+class User(db.Model):
+    __tablename__ = 'users'
+    __table_args__ = {
+        'mysql_engine': 'InnoDB',
+        'mysql_charset': 'utf8'
+    }
+    id = db.Column(db.Integer, primary_key = True)
+    username = db.Column(db.String(100))
+    password = db.Column(db.String(32))
+    last_login = db.Column(db.DateTime())
+    last_ip = db.Column(db.String(15))
 
 def init_db():
     # import all modules here that might define models so that
